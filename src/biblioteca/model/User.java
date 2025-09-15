@@ -1,11 +1,13 @@
+package src.biblioteca.model;
 public class User {
     private String nome;
     private int ID;
 
-    // sobrecarga de construtor
-    User(String nome, int ID) {
+    public static int proximoID = 1;
+    
+    public User(String nome) {
         this.nome = nome;
-        this.ID = ID;
+        this.ID = proximoID++;
     }
     public void setNome(String nome) {
         this.nome = nome;

@@ -10,5 +10,7 @@ public class Main {
         System.out.println(a1.getNome());
         System.out.println(a1.getID());
         System.out.println(a2.getID());
+
+        
     }
 }

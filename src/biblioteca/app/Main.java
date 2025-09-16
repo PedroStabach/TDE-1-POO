@@ -19,9 +19,7 @@ public class Main {
         LivroService svc = new LivroService();
         
         p1.emprestarLivro(livros.get(1));
-        p1.emprestarLivro(livros.get(1));
-        p1.emprestarLivro(livros.get(1));
-
+        p1.devolverLivro(livros.get(0));
         svc.historicoEmprestimos(p1);
 
     }

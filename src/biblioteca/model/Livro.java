@@ -47,4 +47,12 @@ public class Livro {
             return "erro ao emprestar livro.";
         }
     }
+    public String devolver() {
+        if(this.quantidade <= this.quantidadeTotal) {
+            this.quantidade++;
+            return "livro devolvido com sucesso";
+        } else {
+            return "erro ao devolver livro";
+        }
+    }
 }

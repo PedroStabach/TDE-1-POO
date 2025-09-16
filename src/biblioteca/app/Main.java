@@ -13,11 +13,15 @@ public class Main {
         List<Livro> livros = new ArrayList<>();
         Aluno a1 = new Aluno("aluno");
         Professor p1 = new Professor("professor");
-        livros.add(new Livro("asdass", "asda", "qwds", "sdfs", 1));
-        livros.add(new Livro("asdass", "asda", "qwds", "sdfs", 1));
+        livros.add(new Livro("1", "asda", "qwds", "sdfs", 10, 10));
+        livros.add(new Livro("2", "asda", "qwds", "sdfs", 5));
+
         LivroService svc = new LivroService();
         svc.listagemLivros(livros);
+        
+        p1.emprestarLivro(livros.get(1));
 
+        svc.emprestimosAtivados(livros);
 
     }
 }

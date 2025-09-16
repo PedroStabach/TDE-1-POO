@@ -10,4 +10,16 @@ public class LivroService {
             System.out.println(livro.getTitulo());
         }
     }
+
+    public void emprestimosAtivados(List<Livro> livros) {      
+        for (Livro livro : livros) {
+            if (livro.getQuantidade() != livro.getQuantidadeTotal()) {
+                System.out.println(livro.getTitulo());
+            }
+        }
+    }
+
+    public void historicoEmprestimos() {
+        
+    }
 }

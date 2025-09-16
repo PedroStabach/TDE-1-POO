@@ -1,11 +1,13 @@
-import src.biblioteca.model.Livro;
-
 package src.biblioteca.service;
 
+import java.util.ArrayList;
+import java.util.List;
+import src.biblioteca.model.Livro;
+
 public class LivroService {
-    public void listagemLivros(Livro[] livros) {
-        for(int i = 0; i < livros.length ; i++) {
-            System.out.println(livros[i].getTitulo());
+    public void listagemLivros(List<Livro> livros) {        
+        for (Livro livro : livros) {
+            System.out.println(livro.getTitulo());
         }
     }
 }

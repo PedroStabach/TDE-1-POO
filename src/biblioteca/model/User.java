@@ -1,6 +1,7 @@
 package src.biblioteca.model;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class User {
     private String nome;
@@ -13,6 +14,7 @@ public class User {
     public User(String nome) {
         this.nome = nome;
         this.ID = proximoID++;
+        this.Historico = new ArrayList<>();
     }
 
     //getters e setters
@@ -25,9 +27,14 @@ public class User {
     public int getID() {
         return this.ID;
     }
+    public List<Livro> getHistorico() {
+        return this.Historico;
+    }
 
+    //metodos
     public void emprestarLivro(Livro livro) {
-        Historico.add(livro);
-        System.out.println(Historico);
+        this.Historico.add(livro);
+        livro.emprestar();
+        System.out.println(this.Historico);
     }
 }

@@ -17,11 +17,12 @@ public class Main {
         livros.add(new Livro("2", "asda", "qwds", "sdfs", 5));
 
         LivroService svc = new LivroService();
-        svc.listagemLivros(livros);
         
         p1.emprestarLivro(livros.get(1));
+        p1.emprestarLivro(livros.get(1));
+        p1.emprestarLivro(livros.get(1));
 
-        svc.emprestimosAtivados(livros);
+        svc.historicoEmprestimos(p1);
 
     }
 }

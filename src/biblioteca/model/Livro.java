@@ -1,5 +1,7 @@
 package src.biblioteca.model;
 
+import java.time.LocalDate;
+
 public class Livro {
     private String titulo;
     private String autor;
@@ -7,6 +9,8 @@ public class Livro {
     private String ISBN;
     private int quantidade = 1;
     private int quantidadeTotal = quantidade;
+    private LocalDate dataEmprestimo;
+    private LocalDate dataDevolucaoPrevista;
 
     public Livro(String titulo, String autor, String ano, String ISBN) {
         this.titulo = titulo;
@@ -39,6 +43,20 @@ public class Livro {
     public int getQuantidadeTotal () {
         return this.quantidadeTotal;
     }
+    public LocalDate getDataEmprestimo() {
+        return dataEmprestimo;
+    }
+    public LocalDate getDataDevolucaoPrevista() {
+        return dataDevolucaoPrevista;
+    }
+    public void setDataEmprestimo(LocalDate data) {
+        this.dataEmprestimo = data;
+    }
+
+    public void setDataDevolucaoPrevista(LocalDate data) {
+        this.dataDevolucaoPrevista = data;
+    }
+
     public String emprestar() {
         if(this.quantidade >= 1) {
             this.quantidade--;

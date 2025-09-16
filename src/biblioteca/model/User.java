@@ -1,9 +1,10 @@
 package src.biblioteca.model;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
-public class User {
+public abstract class User {
     private String nome;
     private int ID;
     private ArrayList<Livro> Historico;
@@ -36,9 +37,12 @@ public class User {
         this.Historico.add(livro);
         List<Livro> Livro = this.Historico;
         livro.emprestar();
+        livro.setDataEmprestimo(LocalDate.now());
+        livro.setDataDevolucaoPrevista(calcularPrazoDevolucao());
         System.out.println(livro.getTitulo());
     }
-    
+    public abstract LocalDate calcularPrazoDevolucao();
+
     public void devolverLivro(Livro livro) {
         List<Livro> livros = this.Historico;
         if(livros.contains(livro)) {
